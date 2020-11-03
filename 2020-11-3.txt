@@ -1,0 +1,29 @@
+# Studying
+
+
+## Courses:
+
+### HTML, CSS, & JavaScript - Certification Course for Beginners
+https://www.udemy.com/course/html-css-javascript-certification-course-for-beginners/
+
+### How to Code: Simple Data (Racket)
+https://courses.edx.org/courses/course-v1:UBCx+HtC1x+2T2017/course/
+
+### Javascript
+https://www.theodinproject.com/courses/javascript
+
+
+## Notes
+
+### Javascript:
+-Object, practice dot notation and bracket notation
+
+-Object Prototypes make no sense
+
+### Racket:
+-Expression syntax feels inefficient until you have more than two items.
+--(+ 3 4) feels like a waste
+--(+ 3 4 5) starts to feel better
+
+-Remember (require 2htdp/image)
+--2nd edition How To Design Programs
