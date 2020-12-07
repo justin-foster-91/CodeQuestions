@@ -1,14 +1,20 @@
-function PrintStuff (myDocuments) {
-  this.documents = myDocuments;
+// findSmallestInt = (args) => {
+//   let smallest = args[0];
+//   for(i=0; i<=args.length; i++){
+//     if(args[i] < smallest) smallest = args[i] 
+//   }
+//   return smallest;
+// }
+
+class SmallestIntegerFinder {
+  findSmallestInt(args) {
+    let smallest = args[0];
+    for(i=0; i<=args.length; i++){
+      if(args[i] < smallest) smallest = args[i] 
+    }
+    return smallest;
+  }
 }
 
-// We add the print () method to PrintStuff prototype property so that other instances (objects) can inherit it:
-PrintStuff.prototype.print = function () {
-console.log(this.documents);
-}
-
-// Create a new object with the PrintStuff () constructor, thus allowing this new object to inherit PrintStuff's properties and methods.
-var newObj = new PrintStuff ("I am a new Object and I can print.");
-
-// newObj inherited all the properties and methods, including the print method, from the PrintStuff function. Now newObj can call print directly, even though we never created a print () method on it.
-newObj.print (); //I am a new Object and I can print.
+let sif = new SmallestIntegerFinder();
+console.log(sif.findSmallestInt([8, 5, 10, 12, 1]))
