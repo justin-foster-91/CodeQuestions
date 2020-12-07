@@ -1,10 +1,9 @@
-function digitize(n) {
-  let reversed = [];
-  for (i<=n.length; i<=0; i--){
-    console.log("Hello?")
-    reversed.push(n[i])
+function between(a, b) {
+  let arrList = []
+  for (let i=a; i<=b; i++){
+    arrList.push(i)
   }
-  return reversed;
+  return arrList;
 }
 
-console.log(digitize(35231))
+console.log(between(1,4))

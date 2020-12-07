@@ -1,20 +1,9 @@
-// findSmallestInt = (args) => {
-//   let smallest = args[0];
-//   for(i=0; i<=args.length; i++){
-//     if(args[i] < smallest) smallest = args[i] 
-//   }
-//   return smallest;
-// }
-
-class SmallestIntegerFinder {
-  findSmallestInt(args) {
-    let smallest = args[0];
-    for(i=0; i<=args.length; i++){
-      if(args[i] < smallest) smallest = args[i] 
-    }
-    return smallest;
-  }
+function points(games) {
+  let score = games.forEach(idx => 
+    // Number(idx.split(':'))
+    idx.split(':')
+  )
+  return score;
 }
 
-let sif = new SmallestIntegerFinder();
-console.log(sif.findSmallestInt([8, 5, 10, 12, 1]))
+console.log(points(['1:0','2:0','3:0','4:0','2:1','3:1','4:1','3:2','4:2','4:3']));
