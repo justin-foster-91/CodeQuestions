@@ -1,13 +1,14 @@
-function findOdd(A) {
-  let charCount = {};
-  A.map(num => {
-    if (!charCount[num]) {
-      charCount[num] = 1;
-    } else {
-      charCount[num] = (charCount[num] += 1);
-    }
-    console.log(charCount);
-  })
-  let oddValue = Object.values(charCount).find((value, index) => charCount[index] = (value % 2 !== 0));
-  return Number(Object.keys(charCount).find(key => charCount[key] === oddValue));
+function findOutlier(integers){
+  let countEvenOrOdd = {even: 0, odd: 0};
+  for (let i=0; i<3; i++){
+    (integers[i] % 2 === 0) 
+      ? countEvenOrOdd.even += 1 
+      : countEvenOrOdd.odd += 1;
+  }
+  
+  let evenOrOddValue = Math.min(countEvenOrOdd.even, countEvenOrOdd.odd)
+  let whatToFind = Object.keys(countEvenOrOdd).find(key => countEvenOrOdd[key] === evenOrOddValue);
+  return (whatToFind === 'even') 
+    ? integers.find(num => num % 2 === 0) 
+    : integers.find(num => num % 2 != 0)
 }
