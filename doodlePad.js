@@ -1,11 +1,9 @@
-function spinWords(s){
-  let rev = [];
-  let sArr = s.split(' ');
-
-  for (let i=0; i<=sArr.length; i++){
-    (sArr[i].length >= 5) 
-      ? rev.push(sArr[i].split('').reverse().join('')) 
-      : rev.push(sArr[i]);
-  }
-  return rev.join(' ');
+function titleCase(s) {
+  return s[0].toUpperCase() + s.slice(1).toLowerCase()
 }
+
+function accum(s) {
+	s.split('').map(char => char = char * s.indexOf(char))
+}
+
+console.log(titleCase('greetings'))

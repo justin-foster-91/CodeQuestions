@@ -1,5 +1,12 @@
-function isDivideBy(number, a, b) {
-  return (number / a === b) ? true : false;
+
+// function order2(word){
+//   let key = {};
+//   key[word.replace(/[a-z]/gi, '')] = word
+//   return key;
+// }
+
+function order2(word){
+  return {position: word.replace(/[a-z]/gi, ''), word: word};
 }
 
-console.log(isDivideBy(45, 5, 15))
+console.log(order2('T4est'))
