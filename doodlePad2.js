@@ -22,23 +22,24 @@ console.log(displayMinutes(6))
 // console.log(72 % 60);
 
 
-// function displayMinutes(time) {
-//   return (time < 1000) ? '0' + time : time;
-// }
+function displayMinutes(time) {
+  return (time < 1000) ? '0' + time : time;
+}
 
-// function humanReadable(seconds) {
-//   let HH = '00';
-//   let MM = '00';
-//   let SS = '00';
+function humanReadable(seconds) {
+  let HH = '00';
+  let MM = '00';
+  let SS = '00';
   
-//   if (seconds < 60) displaySeconds(seconds);
-//   if (seconds < 6000) displayMinutes(seconds);
+  if (seconds < 60) displaySeconds(seconds);
+  if (seconds < 6000) displayMinutes(seconds);
     
-//   else
+  else
   
-//   return `${HH}:${MM}:${SS}`
-// }
+  return `${HH}:${MM}:${SS}`
+}
 
 // Convert all inputs into 6 digits with extra 0's at the front?
 
 
+// Hours from (seconds), subtract whatever is left over 

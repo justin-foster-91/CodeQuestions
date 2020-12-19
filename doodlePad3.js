@@ -1,32 +1,18 @@
-function anagramCompare(wordA, wordB) {
-  let countA = {};
-  let countB = {};
+function keyCycle(letter){
+  let upperKey = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let lowerKey = 'abcdefghijklmnopqrstuvwxyz';
 
-  wordA.split('').map(char => (countA[char]) ? countA[char]++ : countA[char] = 1);
-  wordB.split('').map(char => (countB[char]) ? countB[char]++ : countB[char] = 1);
+  let useKey = (letter.toUpperCase() === letter) ? upperKey : lowerKey;
+  let letterNum = useKey.split('').indexOf(letter);
 
-  return (isEqual(countA, countB));
+  console.log(useKey[(letterNum+13) % 26])
+
+  return useKey[(letterNum+13) % 26];
 }
 
-function anagrams(word, words) {
-  return words.filter(wordComp => anagramCompare(word, wordComp))
+function rot13(message){
+  let cypher = message.split('').map(char => (char.match(/[a-z]/gi)) ? keyCycle(char) : char).join('');
+  return cypher;
 }
 
-function isEqual(obj1, obj2) {
-  let props1 = Object.getOwnPropertyNames(obj1);
-  let props2 = Object.getOwnPropertyNames(obj2);
-  
-  if (props1.length != props2.length) {
-    return false;
-  }  for (let i = 0; i < props1.length; i++) {
-    let prop = props1[i];
-    
-    if (obj1[prop] !== obj2[prop]) {
-      return false;
-    }
-  }
-
-  return true;
-}
-
-console.log(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']))
+console.log(rot13("Test"))
