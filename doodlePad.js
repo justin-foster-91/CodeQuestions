@@ -9,7 +9,6 @@ function dirReduc(arr){
         case 'EAST': EW++; break;
         case 'WEST': EW--; break;
     }
-    console.log(NS, EW)
   })
   
   let nsArr = []
@@ -22,5 +21,3 @@ function dirReduc(arr){
 
   return nsArr.concat(ewArr).filter(el => el != '');
 }
-
-console.log(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]));
