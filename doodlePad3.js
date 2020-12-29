@@ -1,23 +1,22 @@
-var maxSequence = function(arr){
-  let maxTotal = 0;
-  for (let i=0; i<arr.length; i++) {
-    let tempTotal = sliceTotalMax(arr, i);
-    if (tempTotal > maxTotal) maxTotal = tempTotal;
-  }
-  return maxTotal;
+function generateHashtag (str) {
+  return str.length > 140 || str === '' ? false :
+    '#' + str.split(' ').map(capitalize).join('');
 }
 
-const sliceTotalMax = function(arr, sliceLength){
-  let sliceTotal = 0;
-  for (let i=0; i<arr.length - sliceLength; i++) {
-    let tempTotal = arr.slice(i, i + sliceLength).reduce(((a,b) => a+b), 0);
-    // console.log(tempTotal)
-    if (tempTotal > sliceTotal) sliceTotal = tempTotal;
-  } 
-  return sliceTotal;
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-console.log(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
-console.log('Expected: 6')
+// --------
 
-// console.log('Result: ', sliceTotalMax([-2, 1, -3, 4, -1, 2, 1, -5, 4], 1));
+function generateHashtag (str) {
+  if (!str.trim()) return false;
+  let hashtag = '#' + str.split(' ').map(word => {if(word.trim()) return titleCase(word)}).join('')
+  return (hashtag.length < 141) ? hashtag : false;
+}
+
+function titleCase(word){
+  return word[0].toUpperCase() + word.slice(1)
+}
+
+console.log('--->' + blah('           ') + '<---');

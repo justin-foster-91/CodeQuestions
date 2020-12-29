@@ -1,23 +1,15 @@
-function dirReduc(arr){
-  let NS = 0;
-  let EW = 0;
-  
-  arr.map(dir => {
-    switch (dir) {
-        case 'NORTH': NS++; break;
-        case 'SOUTH': NS--; break;
-        case 'EAST': EW++; break;
-        case 'WEST': EW--; break;
-    }
-  })
-  
-  let nsArr = []
-  if (NS > 0) nsArr = 'NORTH '.repeat(Math.abs(NS)).split(' ')
-  if (NS < 0) nsArr = 'SOUTH '.repeat(Math.abs(NS)).split(' ')
-
-  let ewArr = []
-  if (EW > 0) ewArr = 'EAST '.repeat(Math.abs(EW)).split(' ')
-  if (EW < 0) ewArr = 'WEST '.repeat(Math.abs(EW)).split(' ')
-
-  return nsArr.concat(ewArr).filter(el => el != '');
+function zero(x) {
+  if (x === undefined) return 0
+  return x(0)
 }
+function one(x) {
+  if (x === undefined) return 1
+  return x(1)
+}
+
+function times(x) {return (y) => {
+  return x * y;
+}}
+
+console.log(one(times(one())))
+console.log(one(times(zero())));

@@ -1,21 +1,27 @@
-var maxSequence = function(arr){
-  let arrayStart = 0;
-  let maxTotal = 0;
-  for (let i=arrayStart; i<arr.length - arrayStart; i++){
-    let tempArray = arr.slice(arrayStart)
-    if (subArrTotal(tempArray) > maxTotal) maxTotal = subArrTotal(tempArray);
-    arrayStart++;
-  }
-  return maxTotal;
+// 1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153
+
+let left = 1**3 + 5**3 + 3**3;
+let right = 1 + 125 + 27;
+let val = 153;
+
+// console.log(left, right, val);
+
+// function narcissistic(value) {
+//   let length = Number(value.toString().length);
+//   let valArr = value.toString().split('');
+//   valArr = valArr.map(char => Number(char))
+//   return valArr.reduce((accum, num) => {
+//     console.log(accum);
+//     return accum + (num**length)
+//   });
+// }
+
+function narcissistic(value) {
+  let length = Number(value.toString().length);
+  let valArr = value.toString().split('');
+  valArr = valArr.map(num => Number(num)**length)
+  return valArr.reduce((accum, num) => accum + num) === value;
 }
 
-const subArrTotal = function(arr){
-  let subTotal = 0;
-  for (let i=0; i<arr.length; i++) {
-    subTotal += arr[i];
-  } 
-  return subTotal;
-}
-
-console.log(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
-console.log('Expected: 6')
+console.log(narcissistic(371));
+// 27 + 343 + 1
